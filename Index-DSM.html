@@ -28,6 +28,10 @@
 <br><br><br>
 <h2>&darr; Laat hier je bod achter! &darr;</h2>
 <br><br><br>
+ <?php 
+ include "connect.php";  
+$mysql = mysqli_connect($localhost,$veilingmr,$Pierson1920#,$veiling1) or die("fout"); 
+$sql= INSERT INTO `veiling1`.`biedingen` (`veiling_id`, `bod`, `voornaam`, `achternaam`, `postcode`, `huisnummer`, `land`, `telefoonnummer`, `email`)
   <form action="/action_page.php">
     <b><label for="bod">Bieden</label></b> <br>
     <input type="number" id="bieden" name="bieden" pattern="[0-9{10}" placeholder="Je bod..">
@@ -59,6 +63,8 @@
 <br>
     <input type="submit" value="Bevestig">
   </form>
+  mysqli_close($mysql) or die("fout");
+  ?>
 
 </body>
 </html>
